@@ -30,4 +30,11 @@ router.post('/posts',async(req,res)=>{
     }
 })
 
+//router to delete
+router.post('/posts/delete/:id', async (req, res) => {
+    await Post.findByIdAndDelete(req.params.id);
+    res.redirect('/');
+  });
+  
+
 module.exports = router;
