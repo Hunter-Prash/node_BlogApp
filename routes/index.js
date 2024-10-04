@@ -17,9 +17,7 @@ router.get('/new',(req,res)=>{
 //create new post and save to db
 router.post('/posts',async(req,res)=>{
     const{title,content}=req.body;
-
-
-
+    
     try{
         const post = new Post({title,content})
         await post.save()
